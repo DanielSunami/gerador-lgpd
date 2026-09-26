@@ -102,15 +102,15 @@ Os itens abaixo são **títulos de seção**, nesta ordem. O conteúdo obrigató
 
 ### Linguagem
 
-Registro **formal e institucional**, de política jurídica brasileira (o tom de um escritório: “esta Política”, “estes Termos de Uso”, “ao utilizar o software”, “os autores não se responsabilizam”). Segunda pessoa (“você”) é adequada. Não use tom de conversa, blog, README de hobby nem frase de uma linha para fechar o raciocínio.
+Registro **formal e institucional**, de política jurídica brasileira. Segunda pessoa (“você”) é adequada. Não use tom de conversa, blog, README de hobby nem frase de uma linha para fechar o raciocínio.
 
 Prefira “software” a “programa”/“app”; “oferecido de forma gratuita e para uso livre” a “de graça”; “armazenamento neste navegador” a jargão de implementação. Em português não escreva “como está” nem “AS IS”; use **sem garantia** e “oferecido sem promessa de funcionamento”.
 
-Não copie texto de terceiros. O registro é o de uma política advocatícia; a matéria é o produto confirmado no quadro de fatos.
+Leia `exemplo/PRIVACIDADE.md` e `exemplo/TERMOS.md` **antes de redigir**: são o molde de abertura, ordem das seções e tom. Substitua a matéria pelos fatos confirmados. Não invente CNPJ, sede, Encarregado, mailing, grupo econômico nem coleta que o produto não tem.
 
 ### `TERMOS.md`
 
-Abertura (sem heading): estes Termos de Uso regem a utilização do software [nome]; uso livre; inexistência de contraprestação, de SLA e de contrato de prestação de serviço. Ponte: o tratamento de dados, quando houver, está na Política de Privacidade.
+Abertura (sem heading): estes Termos de Uso regem a utilização do software [nome]; uso livre; inexistência de contraprestação, de SLA e de contrato de prestação de serviço. 
 
 | Seção | O que vai dentro |
 |---|---|
@@ -127,7 +127,12 @@ Modo **A** se os autores não recebem o dado. Modo **B** se recebem (servidor, c
 
 #### Modo A — autores não tratam
 
-Abertura: esta Política descreve o que ocorre com os dados no uso **como distribuído** (sem conta, sem servidor dos autores, sem envio dos registros). Cópia com backend sai deste regime.
+Abertura (sem heading), no molde de `exemplo/PRIVACIDADE.md`, em três ou quatro parágrafos:
+
+1. Identifique o software e os autores. Oferecido de forma gratuita e para uso livre. Sem CNPJ, sede ou Encarregado, salvo se existirem de verdade.
+2. A frase-eixo, adaptada ao fato de os autores **não** coletarem: *Serve o presente documento para regular, de forma simples, transparente e objetiva, como os dados pessoais são tratados no uso do software [nome], quando utilizado como distribuído.*
+3. A quem se destina: quem utiliza o software no próprio dispositivo. Sem conta, sem servidor dos autores, sem envio dos registros. Cópia com servidor sai deste regime.
+4. Contato: canal confirmado. Inexistindo tratamento pelos autores, não há Encarregado nem pedido de exclusão em sistema remoto.
 
 | Seção | O que vai dentro |
 |---|---|
@@ -144,7 +149,12 @@ Abertura: esta Política descreve o que ocorre com os dados no uso **como distri
 
 Aviso do art. 9º. Base legal **confirmada pelo usuário**.
 
-Abertura: identificação do software e do controlador.
+Abertura (sem heading), no molde de `exemplo/PRIVACIDADE.md`:
+
+1. Qualifique o controlador (nome; CNPJ e sede só se confirmados).
+2. *Serve o presente documento para regular, de forma simples, transparente e objetiva, como os seus dados pessoais serão coletados, utilizados e protegidos.*
+3. A quem se destina o instrumento (quem interage com o software ou com o serviço).
+4. Canal para dúvidas, solicitações, incidentes e exclusão. Encarregado **somente** se existir; senão, o contato dos autores, sem inventar DPO.
 
 | Seção | O que vai dentro |
 |---|---|
@@ -159,7 +169,7 @@ Abertura: identificação do software e do controlador.
 
 ## 5. Redigir
 
-Arquivos de texto na raiz do projeto (ou onde o usuário pedir): `PRIVACIDADE.md` e `TERMOS.md`. Siga a estrutura da seção 4 e o registro formal. Data: hoje, salvo outro combinado.
+Arquivos de texto na raiz do projeto (ou onde o usuário pedir): `PRIVACIDADE.md` e `TERMOS.md`. Siga a estrutura da seção 4, o registro de `exemplo/` e o quadro de fatos. Data: hoje, salvo outro combinado.
 
 Não gere sítio, rota, HTML nem implantação, salvo se o usuário pedir depois. Ao terminar, informe que os `.md` são o original e que **publicar o endereço** (em geral HTML no servidor) cabe ao usuário.
 
