@@ -8,15 +8,14 @@ Não é modelo jurídico pronto. O agente busca a lei no Planalto, pergunta o qu
 
 A skill entrega Markdown. **Publicar** — um link público, em geral HTML num servidor web — é com você.
 
-## Instalar
-
-O CLI, sem `-a`, trava um bloco **Universal** (vários agentes em `.agents/skills`) e ainda oferece o `find-skills`. Para instalar só no seu agente:
+## Instalação
 
 ```bash
 npx skills add DanielSunami/gerador-lgpd -a grok -g
 ```
 
-`-a` é o id do agente. Tem Cursor (`cursor`). Exemplos:
+`-g` instala no diretório do usuário, não no projeto.
+`-a` é o id do agente. Exemplos:
 
 ```bash
 npx skills add DanielSunami/gerador-lgpd -a claude-code -g
@@ -28,8 +27,6 @@ npx skills add DanielSunami/gerador-lgpd -a gemini-cli -g
 npx skills add DanielSunami/gerador-lgpd -a windsurf -g
 npx skills add DanielSunami/gerador-lgpd -a opencode -g
 ```
-
-Vários ids de uma vez: `-a grok -a claude-code`. Lista completa: `npx skills add --help` (nomes em `--agent`). `-g` instala no diretório do usuário, não no projeto.
 
 ## Privacidade e termos
 
