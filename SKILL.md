@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires internet to fetch the current LGPD from planalto.gov.br
 metadata:
   author: DanielSunami
-  version: "1.0"
+  version: "1.1"
 ---
 
 # Privacidade e termos (OSS / grátis)
@@ -94,101 +94,73 @@ Mostre um **quadro de fatos** com o que você infereu e o que o usuário disse:
 - o que **não** acontece (envio, analytics, conta…)
 - contato, licença, data
 
-Espere o usuário dizer que está correto. Corrija o que ele negar. **Não gere os arquivos antes disso.** Confira se cada tópico **obrigatório** do modo escolhido tem fato confirmado.
+Espere o usuário dizer que está correto. Corrija o que ele negar. **Não gere os arquivos antes disso.** Confira se cada **seção obrigatória** do modo escolhido está preenchida.
 
-## 4. Tópicos por documento
+## 4. Estrutura dos documentos
 
-Não pule obrigatório. Opcional só entra se o produto tiver aquele fato (não invente o tópico vazio). Os dois arquivos, sempre.
+Os itens abaixo são **títulos de seção**, nesta ordem. O conteúdo obrigatório **preenche** a seção. Não transforme cada fato numa heading nova (`## Papel dos autores`, `## Onde o dado fica`, `## O que você pode inserir`). Se uma seção opcional não tiver fato, omita a seção inteira — não deixe o título vazio.
+
+### Linguagem
+
+Registro **formal e institucional**, de política jurídica brasileira (o tom de um escritório: “esta Política”, “estes Termos de Uso”, “ao utilizar o software”, “os autores não se responsabilizam”). Segunda pessoa (“você”) é adequada. Não use tom de conversa, blog, README de hobby nem frase de uma linha para fechar o raciocínio.
+
+Prefira “software” a “programa”/“app”; “oferecido de forma gratuita e para uso livre” a “de graça”; “armazenamento neste navegador” a jargão de implementação. Em português não escreva “como está” nem “AS IS”; use **sem garantia** e “oferecido sem promessa de funcionamento”.
+
+Não copie texto de terceiros. O registro é o de uma política advocatícia; a matéria é o produto confirmado no quadro de fatos.
 
 ### `TERMOS.md`
 
-**Obrigatório**
+Abertura (sem heading): estes Termos de Uso regem a utilização do software [nome]; uso livre; inexistência de contraprestação, de SLA e de contrato de prestação de serviço. Ponte: o tratamento de dados, quando houver, está na Política de Privacidade.
 
-1. Nome do software e o que ele é (ferramenta; não é serviço com SLA nem contraprestação).
-2. Ponte: isto não é a política de privacidade; o tratamento (se houver) está em `PRIVACIDADE.md`.
-3. Uso livre alinhado à licença do código (usar, copiar, modificar, distribuir nos limites dela).
-4. **Sem garantia** — sem promessa de funcionamento, adequação a um fim, disponibilidade, segurança ou ausência de erros. Título: *Sem garantia* ou *Ausência de garantia*. Em português não use “como está” nem “AS IS”.
-5. Sem responsabilidade dos autores por: perda no dispositivo; conteúdo que o usuário inserir; fork, cópia ou hospedagem de terceiro.
-6. Quem publica ou hospeda uma cópia responde por essa cópia (termos e privacidade dela).
-7. Canal de contato, sem obrigação de suporte, correção ou resposta.
-8. Lei aplicável (padrão: Brasil, no que couber a software grátis).
-9. Data de publicação. Aviso curto de que o texto não é parecer.
-
-**Opcional** (só se couber)
-
-- Propriedade de marcas e nomes de terceiros que o usuário anotar.
-- Inteligência artificial: o app envia dado a modelo, ou não envia (não misture “foi feito com IA” com tratamento dos registros).
-- Natureza extra do produto (não é consulta jurídica, arquivo oficial, etc.).
-- O que o usuário decide sozinho (ex.: se pode gravar áudio).
-- Como o termo muda (publicação no repositório).
-- Foro: só se o usuário pedir; não invente comarca exclusiva.
+| Seção | O que vai dentro |
+|---|---|
+| **1. Natureza do software** | Ferramenta (não serviço com SLA). O que o software **não** constitui (aconselhamento, arquivo oficial, etc., só o que for verdade). O que o usuário decide sozinho (ex.: licitude de gravar conversa). |
+| **2. Uso livre e propriedade intelectual** | Permissões da licença (usar, copiar, modificar, distribuir). Marcas e nomes de terceiros que o usuário inserir continuam de seus titulares. Quem publica ou hospeda cópia responde por essa cópia. |
+| **3. Inteligência artificial** | *(omitir se irrelevante.)* O software envia ou não envia dados a modelo. Não misture “foi desenvolvido com IA” com tratamento dos registros do usuário. |
+| **4. Ausência de garantia e de responsabilidade** | Software oferecido **sem garantia** (funcionamento, adequação a um fim, disponibilidade, segurança, ausência de erros). Autores não se responsabilizam por perda no dispositivo, conteúdo inserido, fork/hospedagem. Na máxima extensão permitida pela lei, exclusão de danos. |
+| **5. Privacidade e dados** | Onde o dado fica, em uma frase. Remissão à Política de Privacidade. |
+| **6. Legislação e contato** | Lei brasileira no que couber a software gratuito. Canal de contato **sem** obrigação de suporte. Data. Aviso de que o texto não constitui parecer jurídico. Foro exclusivo só se o usuário pedir. |
 
 ### `PRIVACIDADE.md`
 
-Escolha o modo. **A** se os autores não recebem o dado. **B** se recebem (servidor, conta, analytics, cookie de rastreio, etc.). Não misture os dois.
+Modo **A** se os autores não recebem o dado. Modo **B** se recebem (servidor, conta, analytics, cookie de rastreio). Não misture.
 
 #### Modo A — autores não tratam
 
-**Obrigatório**
+Abertura: esta Política descreve o que ocorre com os dados no uso **como distribuído** (sem conta, sem servidor dos autores, sem envio dos registros). Cópia com backend sai deste regime.
 
-1. Uso **como distribuído**: sem conta, sem servidor nosso, sem envio dos registros.
-2. Papel: autores não são controlador nem operador; o software grava no dispositivo do usuário.
-3. Onde o dado fica (navegador / aparelho), em linguagem comum.
-4. O que o usuário pode inserir (campos, texto, arquivo, áudio).
-5. Operações locais (art. 5º, X): armazenar, acessar, buscar, modificar, reproduzir, extrair, eliminar — só neste dispositivo.
-6. O que **não** há da nossa parte: coleta nossa, conta, telemetria, perfilamento, decisão automatizada, transferência internacional.
-7. Compartilhamento: nenhum pelo software; saída só por ação do usuário (export, copiar, sync do SO/navegador).
-8. Segurança: a do dispositivo; limpar dados do site / outro navegador / outro aparelho.
-9. Retenção: enquanto o usuário não apagar; autores não guardam cópia. Sem prazo nosso de guarda.
-10. Direitos do art. 18 mapeados ao dispositivo; o que não cabe (consentimento nosso, ANPD contra os autores), em uma linha cada.
-11. Fork com servidor: quem hospeda se torna responsável por ela e precisa da própria política.
-12. Canal de contato. Sem DPO, a menos que exista de verdade.
-13. Lei (LGPD no que couber) e que o texto pode mudar no repositório.
-14. Data de publicação. Aviso curto de que o texto não é parecer.
-
-**Opcional**
-
-- Tabela-resumo (agente, papel, natureza, finalidade, compartilhamento, proteção, direitos, transferência, decisão automatizada). **Sem** linha de anonimização.
-- Dado sensível: o app não pede; texto/áudio ficam como inseridos; dado de terceiro é de quem anota — se houver texto livre ou áudio.
-- Backup / export (o que vai e o que não vai, ex.: JSON sem áudio).
-- Área de transferência, PWA, cookies de sessão do próprio site.
-- Anonimização e bloqueio: só para dizer que **não existem como função**.
+| Seção | O que vai dentro |
+|---|---|
+| **Resumo** | Tabela: agente de tratamento; papel (não há controlador nem operador dos autores); natureza dos dados; finalidades; compartilhamento; proteção; direitos; transferência internacional; decisão automatizada. **Sem** linha de anonimização. |
+| **Quais dados são coletados** | O que o software **não** coleta (cadastro, telemetria, etc.). O que o usuário pode inserir. Dado sensível: só se o produto pedir campo próprio; texto livre e áudio ficam como inseridos; dado de terceiro é de quem anota. Área de transferência, se houver ação explícita do usuário. |
+| **Utilização dos dados** | Finalidades locais. Operações do art. 5º, X (armazenar, acessar, buscar, modificar, reproduzir, extrair, eliminar) neste dispositivo. Inexistência de coleta dos autores, perfilamento, decisão automatizada e transferência internacional. |
+| **Compartilhamento** | Nenhum pelo software. Saída só por ação do usuário (exportação, cópia, sincronização do sistema). Ordem judicial sobre o dispositivo. Cópia hospedada com servidor deixa este regime. |
+| **Segurança de dados** | Inexistência de transmissão pelos autores. Segurança efetiva do dispositivo. Efeitos de limpar dados do sítio, de outro navegador ou de outro aparelho. Sem compromisso de remediar incidente no aparelho do usuário. |
+| **Retenção de dados** | Permanência enquanto o usuário não eliminar. Autores não conservam cópia. Sem prazo de guarda dos autores. Como eliminar (no software e no navegador). |
+| **Seus direitos** | Direitos do art. 18 exercidos neste dispositivo. Cada direito, com o meio concreto ou a indicação de que não cabe (consentimento dos autores, ANPD contra os autores). Anonimização e bloqueio: não existem como função, se for o caso. |
+| **Legislação aplicável e alterações** | Lei nº 13.709/2018 no que couber. Contato; inexistência de Encarregado, salvo se existir. Alterações pela publicação no repositório. Data. O texto não constitui parecer jurídico. |
 
 #### Modo B — autores tratam
 
-Aviso do art. 9º. Base legal **confirmada pelo usuário**; não chute.
+Aviso do art. 9º. Base legal **confirmada pelo usuário**.
 
-**Obrigatório**
+Abertura: identificação do software e do controlador.
 
-1. Identificação do controlador e contato (art. 9º, III e IV).
-2. Finalidade específica do tratamento (art. 9º, I).
-3. Forma e duração do tratamento (art. 9º, II).
-4. Base legal (art. 7º e, se sensível, art. 11) — a que o usuário confirmou. Sem “ao usar você consente”.
-5. Quais dados, de onde vêm, se há dado sensível pedido pelo app.
-6. Uso compartilhado: com quem e para quê (art. 9º, V). Se não houver, diga que não há.
-7. Transferência internacional: se houver, o fato e o mecanismo; se não, diga que não há.
-8. Responsabilidades dos agentes (art. 9º, VI): controlador; operador, se existir.
-9. Direitos do art. 18 **um a um**, com canal para exercer (art. 9º, VII).
-10. Segurança que de fato existe (não copie “melhores práticas” vazias).
-11. Retenção: critério real de guarda e exclusão.
-12. Decisão automatizada / perfilamento: se houver, o que o art. 20 exige; se não, diga que não há.
-13. Fork / instância de terceiro: quem hospeda a própria cópia responde por ela.
-14. Como o documento muda. Data. Aviso de que não é parecer.
-
-**Opcional**
-
-- Encarregado (DPO): contato só se existir.
-- Interesse legítimo: descreva o interesse, se essa for a base.
-- Cookies, telemetria, crash, ads, pagamento — o que o produto tiver.
-- Crianças / idade, se o produto se destina a elas.
-- Relatório de impacto: só se o usuário disser que existe.
-- Tabela-resumo.
-- Legítimo recusa de pedido (identidade não comprovada, guarda legal).
+| Seção | O que vai dentro |
+|---|---|
+| **Resumo** | Tabela equivalente à do modo A, com o controlador identificado. |
+| **Quais dados são coletados** | Dados, origem, dado sensível pedido pelo software. Cookies, telemetria, pagamento, idade — só o que o produto tiver. |
+| **Utilização dos dados** | Finalidade específica (art. 9º, I). Forma e duração (art. 9º, II). Base legal (arts. 7º e 11); sem “ao utilizar, você consente”. Interesse legítimo, se essa for a base. |
+| **Compartilhamento** | Destinatários e finalidade (art. 9º, V), ou a inexistência. Transferência internacional. Operador, se existir (art. 9º, VI). Cópia hospedada por terceiro. |
+| **Segurança de dados** | Medidas que de fato existem. |
+| **Retenção de dados** | Critério real de guarda e exclusão. |
+| **Seus direitos** | Art. 18 um a um, com canal para exercer (art. 9º, VII). Decisão automatizada (art. 20), se houver. Encarregado, só se existir. |
+| **Legislação aplicável e alterações** | Como no modo A, com o contato do controlador. |
 
 ## 5. Redigir
 
-Arquivos de texto na raiz do projeto (ou onde o usuário pedir): `PRIVACIDADE.md` e `TERMOS.md`. Português, seco, no tom do produto. Cubra cada obrigatório do modo escolhido. Data: hoje, salvo outro combinado.
+Arquivos de texto na raiz do projeto (ou onde o usuário pedir): `PRIVACIDADE.md` e `TERMOS.md`. Siga a estrutura da seção 4 e o registro formal. Data: hoje, salvo outro combinado.
 
-Não gere site, rota, HTML nem deploy, salvo se o usuário pedir depois. Ao terminar, diga que os `.md` são o original e que **publicar o link** (em geral HTML no servidor) é com o usuário.
+Não gere sítio, rota, HTML nem implantação, salvo se o usuário pedir depois. Ao terminar, informe que os `.md` são o original e que **publicar o endereço** (em geral HTML no servidor) cabe ao usuário.
 
-Não use detalhe técnico da implementação: localStorage, SQL, Postgres, Redis, key-value, IndexedDB, nome de biblioteca. Na maioria das vezes isso não é relevante para o leitor. Diga “neste navegador”, “no seu aparelho”, “num servidor nosso”. Só entre no jargão se o usuário pedir. Não funda os dois arquivos. Não chame o termo de exigência da LGPD.
+Não use detalhe técnico da implementação: localStorage, SQL, Postgres, Redis, key-value, IndexedDB, nome de biblioteca. Diga “neste navegador”, “no seu aparelho”, “em servidor dos autores”. Não funda os dois arquivos. Não apresente o Termo de Uso como exigência da LGPD.
