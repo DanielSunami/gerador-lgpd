@@ -5,7 +5,7 @@ license: MIT
 compatibility: Requires internet to fetch the current LGPD from planalto.gov.br
 metadata:
   author: DanielSunami
-  version: "1.1"
+  version: "1.3"
 ---
 
 # Privacidade e termos (OSS / grátis)
@@ -84,6 +84,46 @@ Quadro mínimo:
 
 Pergunte também se o app **pede** dado sensível ou só pode aparecer em texto/áudio.
 
+Se aparecer cookie (ou rastreador equivalente: pixel, tag de anúncio), não redija ainda: faça o inventário da seção 2.1 e confirme com o usuário.
+
+## 2.1. Cookies (só se existirem)
+
+O fluxo padrão **não muda**: os dois arquivos continuam `PRIVACIDADE.md` e `TERMOS.md`. Sem cookie no produto, pule esta seção. Não invente política de cookies, Analytics, pixel nem banner.
+
+Havendo cookies — próprios ou de terceiros; de sessão ou persistentes; necessários, analíticos, de funcionalidade ou de publicidade — avalie **cada um** com minúcia. Cookie que o sítio dos autores envia ou lê tende a modo B. Terceiro (analytics, anúncio, rede social embutida) também entra no quadro, mesmo quando os autores “só hospedam o script”.
+
+### Inventário (por cookie)
+
+| Campo | Precisa para |
+|---|---|
+| Nome | o titular achar no navegador (exceção à regra de não citar detalhe técnico) |
+| Dono / domínio | próprio (first-party) ou terceiro |
+| O que faz | finalidade **específica**; sem “melhorar a experiência” |
+| Categoria | necessário ou não necessário; analítico; funcionalidade; publicidade |
+| Duração | sessão ou prazo concreto; sem retenção indeterminada |
+| Dado e compartilhamento | se identifica pessoa; se vai a terceiro |
+| Como desabilitar | configuração do navegador **e** o mecanismo próprio do sítio, se existir |
+| Revogar consentimento / opor-se | tão fácil quanto autorizar (art. 8º, § 5º; art. 18) |
+| Base legal | necessário: em geral legítimo interesse (art. 7º, IX). Não necessário: em geral consentimento (arts. 7º, I, e 8º). Publicidade e perfil: consentimento. Sem “ao navegar, você consente”. Sem caixa pré-marcada. |
+
+Confirme essa lista na seção 3. Não escreva cookie que o código não cria.
+
+### Onde vai o texto
+
+A ANPD aceita a política de cookies como (i) **seção** da Política de Privacidade, (ii) **documento separado**, ou (iii) nas camadas do banner — desde que as informações do art. 9º estejam claras e acessíveis. Pergunte o formato. Se o usuário não escolher, use **seção na privacidade** (não cria arquivo extra). `COOKIES.md` só se ele pedir ou se o inventário não couber numa seção.
+
+Remissão cruzada: privacidade aponta para cookies; cookies apontam para privacidade.
+
+Molde de estrutura (definição, categorias, lista nome / vigência / finalidade, terceiros, controle no navegador, contato): `exemplo/COOKIES.txt`, transcrição da Política de Cookies do MPF (`https://www.mpf.mp.br/servicos/lgpd/politicas/privacidade/politica-de-cookies`). Use a ordem e o tipo de informação. Não copie o texto do MPF nem os cookies deles (`_ga`, Google Analytics, etc.).
+
+A skill **só escreve texto**. Não implementa banner, CMP nem script. Se o produto já tem banner, descreva o que ele faz. Se há cookie **não necessário** e não há banner, avise o usuário (não invente o banner no Markdown). O que o guia espera do banner, o que evitar e os exemplos: `references/anpd-cookies.md`.
+
+### Guia da ANPD (quando houver cookies)
+
+Havendo cookies, leia `references/anpd-cookies.md` **antes** de redigir a parte de cookies. Sem cookies, **não** abra esse arquivo.
+
+O resumo aponta para a página da ANPD e para os exemplos 1–7 do PDF. Dúvida que o resumo não fecha: baixe o guia pelos links que estão lá (página de publicação primeiro; o PDF direto pode mudar). Se o fetch falhar, diga isso e siga com o resumo, sem fingir que leu o PDF.
+
 ## 3. Confirmar antes de escrever (obrigatório)
 
 Mostre um **quadro de fatos** com o que você infereu e o que o usuário disse:
@@ -92,6 +132,7 @@ Mostre um **quadro de fatos** com o que você infereu e o que o usuário disse:
 - onde o dado fica
 - o que entra no armazenamento
 - o que **não** acontece (envio, analytics, conta…)
+- se houver cookies: o inventário da seção 2.1 e se a política vai **dentro** da privacidade ou em arquivo separado
 - contato, licença, data
 
 Espere o usuário dizer que está correto. Corrija o que ele negar. **Não gere os arquivos antes disso.** Confira se cada **seção obrigatória** do modo escolhido está preenchida.
@@ -159,7 +200,8 @@ Abertura (sem heading), no molde de `exemplo/PRIVACIDADE.md`:
 | Seção | O que vai dentro |
 |---|---|
 | **Resumo** | Tabela equivalente à do modo A, com o controlador identificado. |
-| **Quais dados são coletados** | Dados, origem, dado sensível pedido pelo software. Cookies, telemetria, pagamento, idade — só o que o produto tiver. |
+| **Quais dados são coletados** | Dados, origem, dado sensível pedido pelo software. Telemetria, pagamento, idade — só o que o produto tiver. Cookies: resumo + remissão à seção **Cookies** ou a `COOKIES.md`. |
+| **Cookies** | *(omitir se não houver.)* Inventário da seção 2.1, no molde de `exemplo/COOKIES.txt`. Se o usuário pediu arquivo separado, aqui só a remissão. |
 | **Utilização dos dados** | Finalidade específica (art. 9º, I). Forma e duração (art. 9º, II). Base legal (arts. 7º e 11); sem “ao utilizar, você consente”. Interesse legítimo, se essa for a base. |
 | **Compartilhamento** | Destinatários e finalidade (art. 9º, V), ou a inexistência. Transferência internacional. Operador, se existir (art. 9º, VI). Cópia hospedada por terceiro. |
 | **Segurança de dados** | Medidas que de fato existem. |
@@ -169,8 +211,8 @@ Abertura (sem heading), no molde de `exemplo/PRIVACIDADE.md`:
 
 ## 5. Redigir
 
-Arquivos de texto na raiz do projeto (ou onde o usuário pedir): `PRIVACIDADE.md` e `TERMOS.md`. Siga a estrutura da seção 4, o registro de `exemplo/` e o quadro de fatos. Data: hoje, salvo outro combinado.
+Arquivos de texto na raiz do projeto (ou onde o usuário pedir): `PRIVACIDADE.md` e `TERMOS.md`. Siga a estrutura da seção 4, o registro de `exemplo/` e o quadro de fatos. Data: hoje, salvo outro combinado. `COOKIES.md` só na hipótese da seção 2.1.
 
 Não gere sítio, rota, HTML nem implantação, salvo se o usuário pedir depois. Ao terminar, informe que os `.md` são o original e que **publicar o endereço** (em geral HTML no servidor) cabe ao usuário.
 
-Não use detalhe técnico da implementação: localStorage, SQL, Postgres, Redis, key-value, IndexedDB, nome de biblioteca. Diga “neste navegador”, “no seu aparelho”, “em servidor dos autores”. Não funda os dois arquivos. Não apresente o Termo de Uso como exigência da LGPD.
+Não use detalhe técnico da implementação: localStorage, SQL, Postgres, Redis, key-value, IndexedDB, nome de biblioteca. Diga “neste navegador”, “no seu aparelho”, “em servidor dos autores”. Exceção: o **nome do cookie** no inventário da seção 2.1. Não funda os dois arquivos. Não apresente o Termo de Uso como exigência da LGPD.
